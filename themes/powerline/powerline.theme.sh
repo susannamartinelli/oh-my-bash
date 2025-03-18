@@ -37,6 +37,9 @@ K8S_CHAR=${POWERLINE_K8S_CHAR:="⚓ "}
 AWS_THEME_PROMPT_COLOR=124
 AWS_CHAR=${POWERLINE_AWS_CHAR:="🌩 "}
 
+TFENV_THEME_PROMPT_COLOR=250
+TFENV_CHAR=${POWERLINE_TFENV_CHAR:="🧰 tf: "}
+
 CWD_THEME_PROMPT_COLOR=240
 
 LAST_STATUS_THEME_PROMPT_COLOR=52
@@ -53,7 +56,7 @@ THEME_CLOCK_FORMAT=${THEME_CLOCK_FORMAT:="%H:%M:%S"}
 IN_VIM_THEME_PROMPT_COLOR=245
 IN_VIM_THEME_PROMPT_TEXT="vim"
 
-POWERLINE_PROMPT=${POWERLINE_PROMPT:="user_info clock scm python_venv ruby cwd kubectl aws"}
+POWERLINE_PROMPT=${POWERLINE_PROMPT:="user_info clock tfenv scm python_venv ruby cwd kubectl aws"}
 
 function _omb_theme_PROMPT_COMMAND { __powerline_prompt_command "$@"; }
 _omb_util_add_prompt_command _omb_theme_PROMPT_COMMAND

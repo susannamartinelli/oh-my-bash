@@ -84,6 +84,12 @@ function __powerline_aws_prompt() {
   [[ -n "${aws_profile}" ]] && _omb_util_print "${AWS_CHAR}${aws_profile}|${AWS_THEME_PROMPT_COLOR}"
 }
 
+function __powerline_tfenv_prompt() {
+  local tf_env_vers=""
+  tf_env_vers=$(tfenv version-name)
+  [[ -n "${tf_env_vers}" ]] && _omb_util_print "${TFENV_CHAR}${tf_env_vers}|${TFENV_THEME_PROMPT_COLOR}"
+}
+
 function __powerline_ruby_prompt {
   local ruby_version=""
 
