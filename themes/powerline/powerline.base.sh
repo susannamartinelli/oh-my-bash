@@ -72,6 +72,18 @@ function __powerline_user_info_prompt {
   [[ -n "${user_info}" ]] && _omb_util_print "${user_info}|${color}|${secondary_color}"
 }
 
+function __powerline_kubectl_prompt() {
+  local kubectl_current_context=""
+  kubectl_current_context=$(basename $(kubectl config current-context))
+  [[ -n "${kubectl_current_context}" ]] && _omb_util_print "${K8S_CHAR}${kubectl_current_context}|${K8S_THEME_PROMPT_COLOR}"
+}
+
+function __powerline_aws_prompt() {
+  local aws_profile=""
+  aws_profile=$(aws sts get-caller-identity --output json | jq '.Account' | sed 's/\"//g')
+  [[ -n "${aws_profile}" ]] && _omb_util_print "${AWS_CHAR}${aws_profile}|${AWS_THEME_PROMPT_COLOR}"
+}
+
 function __powerline_ruby_prompt {
   local ruby_version=""
 
