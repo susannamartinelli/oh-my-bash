@@ -122,6 +122,14 @@ The selected theme name can be checked by the following command:
 $ echo "$OMB_THEME_RANDOM_SELECTED"
 ```
 
+##### Powerline modified plugin
+This plugin add to the prompt the aws account, the kubernetes cluster and terraform environment.
+You need to have:
+ - **tfenv** command installed: https://github.com/tfutils/tfenv
+ - **awscli** installed and a configured aws account: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+ - **kubectl** command installed and configured: https://kubernetes.io/docs/reference/kubectl/
+
+
 ## Advanced Topics
 
 If you're the type that likes to get their hands dirty, these sections might resonate.

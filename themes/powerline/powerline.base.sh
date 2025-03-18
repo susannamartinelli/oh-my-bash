@@ -41,7 +41,7 @@ function set_color {
     fi
   fi
 
-  echo -e "\[\033[${fg}${fg:+${bg:+;}}${bg}m\]"
+  echo -e "\[\033[1;${fg}${fg:+${bg:+;}}${bg}m\]"
 }
 
 function __powerline_user_info_prompt {
@@ -217,7 +217,7 @@ function __powerline_prompt_command {
 
   [[ -n "${LEFT_PROMPT}" ]] && LEFT_PROMPT+="$(set_color ${LAST_SEGMENT_COLOR} -)${separator_char}${_omb_prompt_normal}"
 
-  PS1="${LEFT_PROMPT} "
+  PS1="${LEFT_PROMPT}\n"
 
   ## cleanup ##
   unset LAST_SEGMENT_COLOR \
