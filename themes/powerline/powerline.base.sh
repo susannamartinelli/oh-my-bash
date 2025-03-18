@@ -217,7 +217,7 @@ function __powerline_prompt_command {
 
   [[ -n "${LEFT_PROMPT}" ]] && LEFT_PROMPT+="$(set_color ${LAST_SEGMENT_COLOR} -)${separator_char}${_omb_prompt_normal}"
 
-  PS1="${LEFT_PROMPT} "
+  PS1="${LEFT_PROMPT}\n# "
 
   ## cleanup ##
   unset LAST_SEGMENT_COLOR \
