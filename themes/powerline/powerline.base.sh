@@ -79,10 +79,10 @@ function __powerline_kubectl_prompt() {
 }
 
 function __powerline_aws_prompt() {
-  local aws_profile=""
-  aws_profile=$(aws sts get-caller-identity --output json | jq '.Account' | sed 's/\"//g')
-  [[ -n "${aws_profile}" ]] && _omb_util_print "${AWS_CHAR}${aws_profile}|${AWS_THEME_PROMPT_COLOR}"
+  # Mostra il prompt solo se l'account ID è disponibile
+  [[ -n "${AWS_ACCOUNT_ID}" ]] && _omb_util_print "${AWS_CHAR}${AWS_ACCOUNT_ID}|${AWS_THEME_PROMPT_COLOR}"
 }
+
 
 function __powerline_tfenv_prompt() {
   local tf_env_vers=""
